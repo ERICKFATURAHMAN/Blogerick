@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erick Faturahman — Digital Marketing Creative Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BACKGROUND INTERAKTIF -->
+  <div class="interactive-bg" id="parallaxScene">
+    <svg class="animated-lines-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="flow-line line-forest" d="M-100 150 C 300 -50, 550 450, 950 200 C 1250 20, 1400 350, 1600 180" />
+      <path class="flow-line line-leaf" d="M-120 420 C 250 650, 650 120, 1080 480 C 1320 680, 1450 300, 1650 450" />
+      <path class="flow-line line-peach" d="M-80 750 C 380 500, 720 880, 1150 620 C 1380 480, 1500 720, 1620 650" />
+    </svg>
+  </div>
+
+  <!-- Top Navigation Floating Dock -->
+  <header class="top-bar">
+    <nav class="quick-nav">
+      <a href="#intro">01. <span class="nav-text">Intro</span></a>
+      <a href="#skills">02. <span class="nav-text">Skill</span></a>
+      <a href="#hobby">03. <span class="nav-text">Hobby</span></a>
+      <a href="#evidence">04. <span class="nav-text">Sertif</span></a>
+      <a href="#review-fnb">05. <span class="nav-text">F&B</span></a>
+      <a href="#review-nonfnb">06. <span class="nav-text">Non-F&B</span></a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- POIN 1: INTRODUCTION -->
+    <section id="intro" class="hero-section">
+      <div class="hero-visual">
+        <div class="photo-card-wrapper">
+          
+          <!-- Gantungan Kunci Interaktif -->
+          <div class="keychain-hanger">
+            <div class="keychain-top-ring"></div>
+            
+            <div class="keychain-strand strand-ball">
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="charm-soccer-ball">
+                <span class="patch p-center"></span>
+                <span class="patch p-top"></span>
+                <span class="patch p-right"></span>
+                <span class="patch p-bottom"></span>
+                <span class="patch p-left"></span>
+              </div>
+            </div>
+
+            <div class="keychain-strand strand-chibi">
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="chain-link"></div>
+              <div class="charm-chibi-pure">
+                <div class="chibi-acrylic-loop"></div>
+                <img src="gsa.png" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=ErickChibi'" alt="Erick Chibi" class="chibi-pure-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Stempel Berputar -->
+          <div class="spinning-stamp">
+            <svg viewBox="0 0 100 100" width="96" height="96">
+              <defs>
+                <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+              </defs>
+              <text font-size="9.2" font-weight="800" fill="#183A0D" letter-spacing="1.6">
+                <textPath href="#circlePath">DIGITAL MARKETING • CREATIVE PORTFOLIO •</textPath>
+              </text>
+            </svg>
+            <span class="stamp-center">★</span>
+          </div>
+
+          <!-- Slider Foto Otomatis -->
+          <div class="photo-frame" id="heroSlider">
+            <div class="hero-slides">
+              <div class="hero-slide active">
+                <img src="erik1.png" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80'" alt="Erick Faturahman Slide 1" class="hero-img">
+              </div>
+              <div class="hero-slide">
+                <img src="erik2.png" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80'" alt="Erick Faturahman Slide 2" class="hero-img">
+              </div>
+              <div class="hero-slide">
+                <img src="erik3.jpg" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80'" alt="Erick Faturahman Slide 3" class="hero-img">
+              </div>
+              <div class="hero-slide">
+                <img src="erik4.png" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80'" alt="Erick Faturahman Slide 4" class="hero-img">
+              </div>
+            </div>
+
+            <div class="slider-dots" id="heroSliderDots">
+              <span class="dot active" onclick="goToHeroSlide(0)"></span>
+              <span class="dot" onclick="goToHeroSlide(1)"></span>
+              <span class="dot" onclick="goToHeroSlide(2)"></span>
+              <span class="dot" onclick="goToHeroSlide(3)"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-typography">
+        <div class="pill-hello">Sampurasun!!</div>
+        <h1 class="hero-title">
+          I'm <span class="pill-forest">Erick,</span><br>
+          Web <span class="pill-leaf">Development</span><br>
+          <span class="pill-forest-tilt">& Graphic</span>
+          Designer <span class="cursor-pointer">➤</span>
+        </h1>
+
+        <!-- SOCIAL MEDIA LINKS (GRID 3 ATAS, 3 BAWAH SIMETRIS) -->
+        <div class="social-hero-wrapper">
+          <span class="social-label">Connect:</span>
+          <div class="social-grid-3x2">
+            <!-- Baris 1: Instagram, TikTok, Facebook -->
+            <a href="https://www.instagram.com/rikftrhman_" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+              <svg class="social-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@rikculerssss" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok">
+              <svg class="social-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+              </svg>
+              <span>TikTok</span>
+            </a>
+
+            <a href="https://www.facebook.com/share/14yZc9Xvy2H/" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
+              <svg class="social-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Facebook</span>
+            </a>
+
+            <!-- Baris 2: X (Twitter), YouTube, LinkedIn -->
+            <a href="https://x.com/ErickFaturahman" target="_blank" rel="noopener noreferrer" class="social-link" title="X (Twitter)">
+              <svg class="social-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              <span>X (Twitter)</span>
+            </a>
+
+            <a href="https://www.youtube.com/@erickfaturahman4967" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
+              <svg class="social-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>YouTube</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/erickfaturahman/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+              <svg class="social-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <main class="container">
+    <div class="poster-body-layout">
+      
+      <!-- Vertical Sidebar Banner Kiri -->
+      <aside class="vertical-sidebar">
+        <div class="vertical-text-wrap">
+          <span class="v-main">Erick Faturahman</span>
+          <span class="v-sub">DIGITAL MARKETING BLOG</span>
+        </div>
+      </aside>
+
+      <!-- Konten Bento Stack Kanan -->
+      <div class="bento-stack">
+
+        <!-- POIN 1: INTRO & ABOUT ME -->
+        <article class="bento-card card-forest">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>01. Intro &<br>About Me</h2>
+              <span class="section-badge-leaf">Poin 1 • Introduction</span>
+            </div>
+            <div class="bento-content">
+              <p class="narrative-text">
+                Saya adalah mahasiswa Sistem Informasi yang memadukan kreativitas desain grafis dengan logika software development. Memiliki rekam jejak dalam memimpin sisi teknis (IT Lead) untuk berbagai proyek pengembangan aplikasi, saya terbiasa menerjemahkan ide-ide visual ke dalam arsitektur kode yang solid. Bagi saya, produk digital yang hebat tidak hanya tentang estetika yang memanjakan mata, tetapi juga sistem yang efisien, skalabel, dan fungsional di baliknya.
+              </p>
+              <div class="media-strip">
+                <img src="google.png" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80'" alt="Workspace" class="strip-thumb">
+                <div class="strip-info">
+                  <strong>Foto Aktivitas & Video Perkenalan Diri</strong>
+                  <p>Dokumentasi kerja di balik layar saat merancang perencanaan konten, arsitektur web, dan eksekusi kampanye digital.</p>
+                  <button class="btn-inline-video" onclick="openSingleVideoModal('01. Introduction: Mengenal Erick & Visi Digital Marketing', 'perkenalan.mp4', 'Narasi Poin 1: Perkenalan latar belakang pendidikan di STMIK AMIKBANDUNG, peran di organisasi kreatif, serta alasan mendalami dunia pemasaran digital.')">
+                    ▶ Tonton Video Narasi Poin 1
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="card-divider">
+
+          <div class="bento-row">
+            <div class="bento-label">
+              <h3>Academic &<br>Organization</h3>
+            </div>
+            <div class="bento-content grid-2-col">
+              <div class="edu-item">
+                <h4>STMIK "AMIKBANDUNG"</h4>
+                <p>S1 Sistem Informasi</p>
+                <span class="year-pill">Mahasiswa Aktif</span>
+              </div>
+              <div class="edu-item">
+                <h4>Google Student Ambassador (GSA)</h4>
+                <p>Google Indonesia</p> 
+                <span class="year-pill">2026</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- POIN 2: SKILL KETERAMPILAN -->
+        <article id="skills" class="bento-card card-peach">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>02. Skill &<br>Keterampilan</h2>
+              <span class="section-badge-forest">Poin 2 • Jagonya saya</span>
+            </div>
+            <div class="bento-content">
+              <p class="narrative-text text-dark">
+                Keterampilan saya menggabungkan logika software development dengan kepekaan desain antarmuka dan komunikasi visual. Dibagi ke dalam <strong>Keterampilan Akademik & Rekayasa</strong> (UI/UX research, arsitektur kode web, hingga konfigurasi jaringan) serta <strong>Keterampilan Bebas & Kreatif</strong> (produksi ratusan aset grafis, video editing, hingga mentoring desain untuk komunitas).
+              </p>
+
+              <!-- BANNER DOWNLOAD CV DI POIN 2 -->
+              <div class="cv-download-banner">
+                <div class="cv-banner-info">
+                  <strong>Curriculum Vitae Lengkap</strong>
+                  <p>Unduh dokumen resume PDF resmi untuk melihat rekam jejak teknis & pencapaian selengkapnya.</p>
+                </div>
+                <a href="cv.pdf" download="CV_Erick_Faturahman.pdf" class="btn-download-cv-highlight" title="Unduh Curriculum Vitae">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download CV (PDF)</span>
+                </a>
+              </div>
+
+              <div class="skill-tabs">
+                <button class="tab-btn active" onclick="filterSkill('all', this)">Semua Skill (6)</button>
+                <button class="tab-btn" onclick="filterSkill('akademik', this)">Skill Akademik & Teknis</button>
+                <button class="tab-btn" onclick="filterSkill('bebas', this)">Skill Bebas & Kreatif</button>
+              </div>
+
+              <div class="software-grid" id="skillGrid">
+                <div class="soft-item" data-category="akademik">
+                  <div class="soft-icon bg-forest-icon">UI/UX</div>
+                  <div class="soft-detail">
+                    <strong>UI/UX Design & User Research (Figma)</strong>
+                    <div class="prog-track"><div class="prog-fill" style="width: 95%;"></div></div>
+                    <small>Riset Alur, Information Architecture, Prototyping</small>
+                  </div>
+                </div>
+
+                <div class="soft-item" data-category="akademik">
+                  <div class="soft-icon bg-leaf-icon"></></div>
+                  <div class="soft-detail">
+                    <strong>Web Development (HTML, CSS, PHP, Laravel)</strong>
+                    <div class="prog-track"><div class="prog-fill" style="width: 88%;"></div></div>
+                    <small>Frontend Responsive, Fullstack Web & Landing Page</small>
+                  </div>
+                </div>
+
+                <div class="soft-item" data-category="akademik">
+                  <div class="soft-icon bg-forest-icon">NET</div>
+                  <div class="soft-detail">
+                    <strong>Network Installation & Tech Support</strong>
+                    <div class="prog-track"><div class="prog-fill" style="width: 90%;"></div></div>
+                    <small>Troubleshooting, Pengujian Kecepatan & Optimasi Jaringan</small>
+                  </div>
+                </div>
+
+                <div class="soft-item" data-category="bebas">
+                  <div class="soft-icon bg-leaf-icon">GD</div>
+                  <div class="soft-detail">
+                    <strong>Graphic Design & Editorial Layout (Canva)</strong>
+                    <div class="prog-track"><div class="prog-fill" style="width: 98%;"></div></div>
+                    <small>403+ Aset Kreatif, Feed & Story, Modul Cetak/Slide</small>
+                  </div>
+                </div>
+
+                <div class="soft-item" data-category="bebas">
+                  <div class="soft-icon bg-forest-icon">VID</div>
+                  <div class="soft-detail">
+                    <strong>Video Editing & Storytelling (CapCut)</strong>
+                    <div class="prog-track"><div class="prog-fill" style="width: 90%;"></div></div>
+                    <small>Video Promosi PPDB, Skenario Konten & Aftermovie Event</small>
+                  </div>
+                </div>
+
+                <div class="soft-item" data-category="bebas">
+                  <div class="soft-icon bg-leaf-icon">SPK</div>
+                  <div class="soft-detail">
+                    <strong>Mentoring & Workshop Facilitator</strong>
+                    <div class="prog-track"><div class="prog-fill" style="width: 92%;"></div></div>
+                    <small>Google Student Ambassador • Coaching Duta Wisata</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="media-strip strip-on-light">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Skill Showcase" class="strip-thumb">
+                <div class="strip-info text-dark">
+                  <strong>Video Demonstrasi Proyek & Skill (2 Video)</strong>
+                  <p>Penjelasan integrasi keahlian UI/UX Figma dan implementasi sistem software. Terdapat 2 video yang dapat digeser di dalam pop-up modal.</p>
+                  <button class="btn-inline-video btn-forest-solid" onclick="openSkillVideoGallery()">
+                    ▶ Tonton 2 Video Showcase Skill (Bisa Geser)
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- POIN 3: HOBBY (SEPAK BOLA & FUTSAL) -->
+        <article id="hobby" class="bento-card card-forest">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>03. Hobby &<br>Interests</h2>
+              <span class="section-badge-leaf">Poin 3 • Rutinitas</span>
+            </div>
+            <div class="bento-content">
+              <p class="narrative-text">
+                Bagi saya, sepak bola bukan sekadar aktivitas fisik pengisi waktu luang, melainkan sarana melatih <strong>pola pikir strategis, komunikasi tim, dan ketahanan mental</strong>. Dari lapangan hijau hingga mini soccer, saya belajar pentingnya membaca ruang, mengambil keputusan cepat di bawah tekanan, serta soliditas kerja sama—prinsip yang secara langsung memperkuat ritme kerja saya saat mengeksekusi proyek kreatif dan teknologi.
+              </p>
+
+              <div class="showcase-grid-3">
+                <div class="showcase-box">
+                  <img src="h4.jpeg" alt="Aksi di Lapangan Sepak Bola">
+                  <div class="showcase-body">
+                    <span class="mini-tag">On the Pitch</span>
+                    <h4>Teamwork & Soliditas</h4>
+                    <p>Membangun koordinasi, chemistry tim, dan saling percaya dalam mengejar target kemenangan bersama.</p>
+                  </div>
+                </div>
+
+                <div class="showcase-box">
+                  <img src="h2.jpeg" alt="Taktik dan Strategi Bola">
+                  <div class="showcase-body">
+                    <span class="mini-tag">Tactical Mind</span>
+                    <h4>Strategi & Decision Making</h4>
+                    <p>Melatih kepekaan membaca alur serangan, mencari celah ruang, serta mengambil eksekusi cepat di bawah tekanan.</p>
+                  </div>
+                </div>
+
+                <div class="showcase-box">
+                  <img src="h3.jpeg" alt="Latihan Fisik Sepak Bola">
+                  <div class="showcase-body">
+                    <span class="mini-tag">Endurance & Passion</span>
+                    <h4>Stamina & Sportivitas</h4>
+                    <p>Menjaga kebugaran fisik, mengasah kedisiplinan, serta melepas penat di luar aktivitas perkuliahan dan coding.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="media-strip">
+                <img src="h1.jpeg" alt="Hobby Dokumentasi" class="strip-thumb">
+                <div class="strip-info">
+                  <strong>Dokumentasi Lapangan & Video Aksi Sepak Bola</strong>
+                  <p>Cuplikan keseruan bertanding di lapangan: bagaimana sportivitas dan strategi bermain sepak bola membangun etos kerja profesional.</p>
+                  <button class="btn-inline-video" onclick="openSingleVideoModal('03. Hobby: Filosofi Sepak Bola & Kerja Tim', 'B1.mp4', 'Narasi Poin 3: Cerita seputar kecintaan bermain sepak bola, mengasah insting taktis, serta bagaimana semangat di lapangan hijau membentuk kepemimpinan dan kerja sama tim.')">
+                    ▶ Tonton Video Hobi Sepak Bola
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- POIN 4: EVIDENCE OF SKILL (PDF POPUP) -->
+        <article id="evidence" class="bento-card card-cream">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>04. Evidence<br>of Skill</h2>
+              <span class="section-badge-forest">Poin 4 • Sertifikasi PDF</span>
+            </div>
+            <div class="bento-content">
+              <p class="narrative-text text-dark">
+                Setiap keahlian yang saya cantumkan didukung oleh rekam jejak dan dokumen sertifikasi multi-halaman. Klik pada masing-masing kartu sertifikat di bawah ini untuk membuka <strong>Pop-Up Pratinjau PDF Lengkap</strong>.
+              </p>
+
+              <div class="cert-grid">
+                <div class="cert-card" onclick="openPdfModal('Penghargaan Adhigana: Staf & Pimpinan Terbaik', 'sertif1.pdf')">
+                  <div class="cert-img-wrap">
+                    <iframe src="sertif1.pdf#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0" class="pdf-cover-preview" tabindex="-1"></iframe>
+                    <span class="cert-badge">📄 Buka PDF</span>
+                  </div>
+                  <div class="cert-info">
+                    <h4>Penghargaan Adhigana: Staf & Pimpinan Terbaik</h4>
+                    <p>Pengabdian 1 Tahun sebagai Kepala Divisi Media Kreatif di Hareudang Bandung</p>
+                  </div>
+                </div>
+
+                <div class="cert-card" onclick="openPdfModal('Sertifikat Kelulusan Hareudang Bandung', 'sertif2.pdf')">
+                  <div class="cert-img-wrap">
+                    <iframe src="sertif2.pdf#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0" class="pdf-cover-preview" tabindex="-1"></iframe>
+                    <span class="cert-badge">📄 Buka PDF</span>
+                  </div>
+                  <div class="cert-info">
+                    <h4>Sertifikat Kelulusan Hareudang Bandung</h4>
+                    <p>Rekam Jejak Selama 1 Tahun, Pengalaman di Bidang Media Kreatif, serta Proyek Pengelolaan Food Waste (HI-YOU)</p>
+                  </div>
+                </div>
+
+                <div class="cert-card" onclick="openPdfModal('Pelatihan Data Analyst Program: Dari Data Menjadi Berdaya', 'sertif3.pdf')">
+                  <div class="cert-img-wrap">
+                    <iframe src="sertif3.pdf#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0" class="pdf-cover-preview" tabindex="-1"></iframe>
+                    <span class="cert-badge">📄 Buka PDF</span>
+                  </div>
+                  <div class="cert-info">
+                    <h4>Pelatihan Data Analyst Program: Dari Data Menjadi Berdaya</h4>
+                    <p>Sertifikasi Kompetensi Analisis Data oleh Dispora Jabar & LAZ Percikan Iman Sedekahku</p>
+                  </div>
+                </div>
+
+                <div class="cert-card" onclick="openPdfModal('Sertifikasi Bahasa Inggris EF SET (Level B2 Menengah Atas)', 'sertif4.pdf')">
+                  <div class="cert-img-wrap">
+                    <iframe src="sertif4.pdf#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0" class="pdf-cover-preview" tabindex="-1"></iframe>
+                    <span class="cert-badge">📄 Buka PDF</span>
+                  </div>
+                  <div class="cert-info">
+                    <h4>Sertifikasi Bahasa Inggris EF SET (Level B2 Menengah Atas)</h4>
+                    <p>Evaluasi Kecakapan Membaca, Mendengarkan, Menulis, dan Berbicara Standar Internasional (CEFR)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="media-strip strip-on-light">
+                <img src="sertiflulus.png" alt="Certificate Proof" class="strip-thumb">
+                <div class="strip-info text-dark">
+                  <strong>Dokumentasi Penyerahan & Bukti Perolehan Sertifikat</strong>
+                  <p>Rekaman autentik momen kelulusan dan penyerahan sertifikat sebagai pengakuan resmi atas kontribusi serta kompetensi yang diraih.</p>
+                  <button class="btn-inline-video btn-forest-solid" onclick="openSingleVideoModal('04. Evidence of Skill: Pembuktian Penerimaan Sertifikat', 'apresiasi1.mp4', 'Narasi Poin 4: Dokumentasi video autentik momen kelulusan, apresiasi, dan penerimaan fisik sertifikat resmi sebagai bukti valid atas dedikasi serta kompetensi yang telah diselesaikan.')">
+                    ▶ Putar Video Bukti Sertifikat
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- POIN 5: REVIEW F&B (CAFE H2R) -->
+        <article id="review-fnb" class="bento-card card-forest">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>05. Review<br>Kuliner F&B</h2>
+              <span class="section-badge-leaf">Poin 5 • Food Review</span>
+            </div>
+            <div class="bento-content">
+              <div class="review-header-banner">
+                <span class="pill-leaf-sm">Street Food & Viral Marketing Audit</span>
+                <h3>Studi Kasus: Cafe H2R — Sensasi Masakan Mantan Chef Hotel Berbintang Konsep Tendaan</h3>
+              </div>
+
+              <p class="narrative-text">
+                Pada ulasan kuliner F&B ini, saya mendatangi langsung <strong>Cafe H2R</strong>, sebuah tempat makan berkonsep tendaan yang menghadirkan kualitas hidangan kelas restoran berkat racikan <strong>mantan chef hotel berbintang</strong>. Dengan rentang harga yang luar biasa terjangkau di <strong>kisaran Rp15.000</strong>, cita rasa yang lezat, serta lokasi yang sangat mudah dijangkau, cafe tendaan ini menjadi destinasi favorit mahasiswa. Dari kacamata <strong>Digital Marketing</strong>, Cafe H2R memanfaatkan formula *high-value at low-cost* yang secara organik memicu viralitas *Word-of-Mouth* (WOM) dan rekomendasi FYP di TikTok.
+              </p>
+
+              <div class="review-portrait-layout">
+                <div class="embedded-video-card">
+                  <video class="direct-review-video" autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80">
+                    <source src="VlogMukbang.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutar video HTML5.
+                  </video>
+                  <div class="video-caption-bar">
+                    <span>📹 Vlog Mukbang & Review Cafe H2R (9:16)</span>
+                  </div>
+                </div>
+
+                <div class="review-points">
+                  <h4>Bedah Strategi Pemasaran Cafe H2R:</h4>
+                  <ul class="audit-list">
+                    <li><strong>Storytelling & Unique Value Proposition (UVP):</strong> Menjual narasi kuat <em>"Rasa Bintang Lima, Harga Kaki Lima Rp15k"</em> oleh mantan chef hotel yang langsung menarik rasa penasaran konsumen.</li>
+                    <li><strong>Lokasi Strategis & Local SEO:</strong> Tempat yang mudah diakses dan ramah kantong mahasiswa, optimal pada pencarian kata kunci <em>"kuliner murah enak terdekat"</em> di Google Maps.</li>
+                    <li><strong>Organic Social Media Virality:</strong> Porsi melimpah dengan harga hemat memicu pelanggan merekam video *review jujur* secara sukarela untuk diunggah ke TikTok & IG Reels.</li>
+                  </ul>
+
+                  <div class="fnb-photo-gallery">
+                    <div class="polaroid-pin card-tilt-left">
+                      <span class="pin-dot"></span>
+                      <img src="h2r1.jpg" alt="Menu Cafe H2R" class="polaroid-img">
+                      <small>01. Menu Chef Rp15k</small>
+                    </div>
+                    <div class="polaroid-pin card-tilt-straight">
+                      <span class="pin-dot"></span>
+                      <img src="h2r2.jpg" alt="Suasana Cafe Tendaan" class="polaroid-img">
+                      <small>02. Suasana Tendaan</small>
+                    </div>
+                    <div class="polaroid-pin card-tilt-right">
+                      <span class="pin-dot"></span>
+                      <img src="h2r3.jpg" alt="Plating Makanan" class="polaroid-img">
+                      <small>03. Cita Rasa Mantap</small>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- POIN 6: REVIEW NON-F&B (KAHF) -->
+        <article id="review-nonfnb" class="bento-card card-peach">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>06. Review<br>Non-F&B</h2>
+              <span class="section-badge-forest">Poin 6 • Produk Non-F&B</span>
+            </div>
+            <div class="bento-content">
+              <div class="review-header-banner">
+                <span class="pill-forest-sm">Non-F&B Brand & Campaign Review</span>
+                <h3 class="text-dark">Studi Kasus: Kahf Face Wash & Eau de Toilette (ParagonCorp)</h3>
+              </div>
+
+              <p class="narrative-text text-dark">
+                Untuk produk Non-F&B, saya mereview rangkaian perawatan pria <strong>Kahf</strong> yang diproduksi oleh <strong>PT Paragon Technology and Innovation (ParagonCorp)</strong>. Dari sisi produk, formula <em>HydroBalance</em>-nya terasa ringan dan segar di wajah tanpa membuat kulit kering. Dari sisi <strong>Digital Marketing</strong>, Kahf sukses mengeksekusi penargetan pasar (<em>targeted marketing</em>) yang luar biasa tajam lewat kombinasi SEM, <em>content marketing</em> bernuansa petualangan, dan afiliasi kreator.
+              </p>
+
+              <div class="review-portrait-layout">
+                <div class="embedded-video-card">
+                  <video class="direct-review-video" autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutar video HTML5.
+                  </video>
+                  <div class="video-caption-bar" style="background: var(--forest-dark); color: var(--cream);">
+                    <span>📹 Review Kahf Grooming (9:16)</span>
+                  </div>
+                </div>
+
+                <div class="review-points text-dark">
+                  <h4 class="text-forest">Poin Bedah Pemasaran Non-F&B:</h4>
+                  <ul class="audit-list list-dark">
+                    <li><strong>Visual Identity & Color Psychology:</strong> Penggunaan warna hijau natural pada kemasan Kahf langsung mengasosiasikan merek dengan bahan alami, halal, dan segar.</li>
+                    <li><strong>SEM & Marketplace PPC:</strong> Selalu tampil di baris iklan teratas ketika audiens mengetik kata kunci <em>"sabun cuci muka pria terbaik"</em>.</li>
+                    <li><strong>Storytelling & Email/Cart Recovery:</strong> Pengelolaan toko resmi <em>e-commerce</em> yang aktif mengirimkan voucer pengingat bagi pelanggan yang belum menyelesaikan <em>checkout</em>.</li>
+                  </ul>
+
+                  <div class="nonfnb-photo-mosaic">
+                    <div class="mosaic-item">
+                      <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Produk Kahf 1" class="mosaic-img">
+                      <span class="mosaic-tag">Face Wash</span>
+                    </div>
+                    <div class="mosaic-item">
+                      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80" alt="Produk Kahf 2" class="mosaic-img">
+                      <span class="mosaic-tag">Packaging</span>
+                    </div>
+                    <div class="mosaic-item">
+                      <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=400&q=80" alt="Produk Kahf 3" class="mosaic-img">
+                      <span class="mosaic-tag">Fragrance</span>
+                    </div>
+                    <div class="mosaic-item">
+                      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=80" alt="Produk Kahf 4" class="mosaic-img">
+                      <span class="mosaic-tag">Details</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>© 2026 <strong>Erick Faturahman</strong> (2441057)</p>
+  </footer>
+
+  <!-- Modal Video Interaktif -->
+  <div id="videoModal" class="modal-overlay" onclick="closeModalOnBg(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle">Judul Video</h3>
+        <button class="btn-close-modal" onclick="closeVideoModal()">×</button>
+      </div>
+
+      <div class="modal-video-wrap">
+        <iframe id="modalDriveFrame" src="" allow="autoplay" allowfullscreen></iframe>
+      </div>
+
+      <div class="modal-video-dock" id="modalVideoNavBar" style="display: none;">
+        <button class="btn-dock-arrow" onclick="prevModalVideo()">
+          <span>◀</span> Video Sebelumnya
+        </button>
+        <span class="dock-counter-pill" id="videoCounterPill">Video 1 dari 2</span>
+        <button class="btn-dock-arrow" onclick="nextModalVideo()">
+          Video Selanjutnya <span>▶</span>
+        </button>
+      </div>
+
+      <div class="modal-narrative-box">
+        <span class="narrative-badge">Transkrip Narasi Video</span>
+        <p id="modalNarrativeText">Deskripsi narasi video akan tampil di sini.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-Up Modal PDF Multi-Halaman -->
+  <div id="pdfModal" class="modal-overlay" onclick="closePdfOnBg(event)">
+    <div class="modal-box modal-box-pdf">
+      <div class="modal-header">
+        <h3 id="pdfModalTitle">Pratinjau Sertifikat PDF</h3>
+        <div class="modal-header-actions">
+          <a id="pdfDownloadLink" href="#" target="_blank" class="btn-pdf-download">Buka Tab Baru / Unduh ↗</a>
+          <button class="btn-close-modal" onclick="closePdfModal()">×</button>
+        </div>
+      </div>
+      <div class="modal-pdf-wrap">
+        <iframe id="pdfViewerFrame" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Music Player -->
+  <div class="floating-music-player" id="musicPlayerWidget">
+    <div class="vinyl-disc" id="vinylDisc" onclick="toggleMusic()">
+      <div class="vinyl-grooves"></div>
+      <div class="vinyl-center">♫</div>
+    </div>
+
+    <div class="music-info-box">
+      <div class="music-meta">
+        <span class="music-title" id="musicTitleText">DJ TYPEKU</span>
+        <span class="music-status" id="musicStatusText">Tap Play / Piringan</span>
+      </div>
+
+      <div class="music-eq" id="musicEq">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </div>
+
+      <div class="music-controls-group">
+        <button class="btn-music-nav" onclick="prevSong()" title="Lagu Sebelumnya">⏮</button>
+        <button class="btn-music-toggle" id="btnMusicToggle" onclick="toggleMusic()" title="Play / Pause">▶</button>
+        <button class="btn-music-nav" onclick="nextSong()" title="Lagu Selanjutnya">⏭</button>
+      </div>
+    </div>
+
+    <audio id="bgMusic">
+      <source id="audioSource" src="" type="audio/mp3">
+      Browser tidak mendukung elemen audio.
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
