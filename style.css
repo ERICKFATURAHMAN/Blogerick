@@ -1020,20 +1020,28 @@ article[id] {
   margin-top: 16px;
 }
 
+/* Container Video Portrait */
 .embedded-video-card {
   width: 100%;
-  border-radius: 18px;
+  max-width: 320px;
+  border-radius: 20px;
   overflow: hidden;
   border: 3px solid var(--forest-dark);
-  box-shadow: 5px 5px 0px var(--forest-dark);
-  background: #000;
+  box-shadow: 6px 6px 0px var(--forest-dark);
+  background: var(--forest-dark);
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Hilangkan space hitam dengan set tinggi yang pas & object-fit cover */
 .direct-review-video {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  height: 480px; /* Tinggi proporsional yang pas untuk frame video HP/Drive */
+  border: none;
   display: block;
   object-fit: cover;
+  background: #000;
 }
 
 .video-caption-bar {
