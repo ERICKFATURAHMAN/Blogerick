@@ -278,7 +278,6 @@ function smoothScrollTo(targetPosition, duration = 800) {
   const distance = targetPosition - startPosition;
   let startTime = null;
 
-  // Rumus matematika pelambatan halus (ease-in-out)
   function easeInOutQuad(t, b, c, d) {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
@@ -297,9 +296,229 @@ function smoothScrollTo(targetPosition, duration = 800) {
   requestAnimationFrame(animation);
 }
 
+/**
+ * 8. FITUR KOMENTAR FULL SINKRON DENGAN GOOGLE SHEETS (TERMASUK SAAT DIHAPUS)
+ */
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzZQ-75stpfv3EjnSmTaTJxhDBgMgSdw7N3Oy1ke41cVibJB7aGuRpcJUlgEa1_XBE/exec";
+const STORAGE_KEY_LIKED_IDS = 'erick_blog_liked_ids_v4';
+
+// Bersihkan sisa cache localStorage versi lama agar komentar yang sudah dihapus tidak nyangkut
+try {
+  localStorage.removeItem('erick_blog_comments_v1');
+  localStorage.removeItem('erick_blog_comments_v2');
+  localStorage.removeItem('erick_blog_comments_v3');
+} catch (e) {}
+
+let commentsState = [];
+
+function getLikedIds() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY_LIKED_IDS) || '[]');
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveLikedIds(ids) {
+  try {
+    localStorage.setItem(STORAGE_KEY_LIKED_IDS, JSON.stringify(ids));
+  } catch (e) {}
+}
+
+function getInitials(name) {
+  const clean = String(name || 'U').trim();
+  const parts = clean.split(' ');
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  }
+  return clean.slice(0, 2).toUpperCase();
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = String(str || '');
+  return div.innerHTML;
+}
+
+function sendToGoogleSheet(paramsObj) {
+  if (!GOOGLE_SCRIPT_URL) return;
+  const query = new URLSearchParams(paramsObj).toString();
+  const fullUrl = `${GOOGLE_SCRIPT_URL}?${query}`;
+
+  fetch(fullUrl, { method: 'GET', mode: 'no-cors' }).catch(() => {});
+
+  const imgPing = new Image();
+  imgPing.src = fullUrl;
+}
+
+function renderCommentsUI() {
+  const container = document.getElementById('commentListContainer');
+  const countBadge = document.getElementById('commentCountBadge');
+  if (!container) return;
+
+  const likedIds = getLikedIds();
+
+  if (countBadge) {
+    countBadge.textContent = `${commentsState.length} Komentar Masuk`;
+  }
+
+  if (commentsState.length === 0) {
+    container.innerHTML = `
+      <div class="comment-item-card" style="justify-content: center; text-align: center; padding: 20px;">
+        <p class="comment-message" style="margin: 0; opacity: 0.75;">Belum ada komentar. Jadilah yang pertama berkomentar!</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = commentsState.map((item) => {
+    const isLiked = likedIds.includes(Number(item.id));
+    return `
+      <div class="comment-item-card">
+        <div class="comment-avatar">${escapeHtml(getInitials(item.name))}</div>
+        <div class="comment-body">
+          <div class="comment-header-meta">
+            <div class="comment-author-wrap">
+              <span class="comment-author-name">${escapeHtml(item.name)}</span>
+            </div>
+            <span class="comment-time">${escapeHtml(item.time)}</span>
+          </div>
+          <p class="comment-message">${escapeHtml(item.text)}</p>
+          <div class="comment-actions">
+            <button type="button" class="btn-like-comment ${isLiked ? 'liked' : ''}" onclick="toggleLikeComment(${item.id})">
+              👍 <span>${item.likes}</span> Suka
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Callback global untuk JSONP (agar bisa baca isi Spreadsheet walaupun dibuka dari file:// lokal)
+window.handleSheetCommentsCallback = function (cloudComments) {
+  if (Array.isArray(cloudComments)) {
+    commentsState = cloudComments;
+    renderCommentsUI();
+  }
+};
+
+function fetchCommentsFromServer() {
+  if (!GOOGLE_SCRIPT_URL) return;
+
+  // Gunakan JSONP Script Tag agar 100% tembus CORS baik di file:// lokal maupun di Vercel
+  const oldScript = document.getElementById('jsonpSheetLoader');
+  if (oldScript) oldScript.remove();
+
+  const script = document.createElement('script');
+  script.id = 'jsonpSheetLoader';
+  script.src = `${GOOGLE_SCRIPT_URL}?action=list&callback=handleSheetCommentsCallback&t=${Date.now()}`;
+  script.onerror = function () {
+    // Fallback ke fetch biasa jika JSONP belum di-deploy ulang
+    fetch(`${GOOGLE_SCRIPT_URL}?action=list&t=${Date.now()}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          commentsState = data;
+          renderCommentsUI();
+        }
+      })
+      .catch(() => {
+        renderCommentsUI();
+      });
+  };
+  document.body.appendChild(script);
+}
+
+function handleCommentSubmit(event) {
+  event.preventDefault();
+  const nameInput = document.getElementById('commentName');
+  const textInput = document.getElementById('commentText');
+  const submitBtn = event.target.querySelector('.btn-submit-comment');
+
+  if (!nameInput || !textInput) return;
+
+  const name = nameInput.value.trim();
+  const text = textInput.value.trim();
+
+  if (!name || !text) return;
+
+  const now = new Date();
+  const timeString = now.toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  }) + ' • ' + now.toLocaleTimeString('id-ID', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  const newComment = {
+    id: Date.now(),
+    name: name,
+    role: '-',
+    text: text,
+    time: timeString,
+    likes: 1
+  };
+
+  commentsState.unshift(newComment);
+
+  const likedIds = getLikedIds();
+  likedIds.push(newComment.id);
+  saveLikedIds(likedIds);
+
+  renderCommentsUI();
+
+  nameInput.value = '';
+  textInput.value = '';
+
+  if (submitBtn) submitBtn.innerHTML = '<span>✅ Terkirim!</span>';
+  sendToGoogleSheet({
+    action: 'add',
+    id: String(newComment.id),
+    name: newComment.name,
+    role: '-',
+    text: newComment.text,
+    time: newComment.time,
+    likes: '1'
+  });
+
+  setTimeout(() => {
+    if (submitBtn) submitBtn.innerHTML = '<span>🚀 Kirim Komentar</span>';
+  }, 1500);
+}
+
+function toggleLikeComment(id) {
+  const target = commentsState.find((c) => Number(c.id) === Number(id));
+  if (!target) return;
+
+  let likedIds = getLikedIds();
+  const numericId = Number(target.id);
+  const isAlreadyLiked = likedIds.includes(numericId);
+
+  if (isAlreadyLiked) {
+    target.likes = Math.max(0, Number(target.likes) - 1);
+    likedIds = likedIds.filter((item) => item !== numericId);
+  } else {
+    target.likes = Number(target.likes) + 1;
+    likedIds.push(numericId);
+  }
+
+  saveLikedIds(likedIds);
+  renderCommentsUI();
+
+  sendToGoogleSheet({
+    action: 'like',
+    id: String(target.id),
+    increment: String(!isAlreadyLiked)
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   startHeroSlideTimer();
   loadSong(0);
+  fetchCommentsFromServer();
 
   const audio = document.getElementById('bgMusic');
   if (audio) {
@@ -326,7 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const headerOffset = 80;
         const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
-        // Jalankan peluncuran visual selama 800ms
         smoothScrollTo(targetTop, 800);
 
         history.pushState(null, null, targetId);

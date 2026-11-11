@@ -1146,6 +1146,226 @@ article[id] {
   border: 1px solid var(--cream);
 }
 
+/* =========================================================
+   FITUR KOMENTAR & GUESTBOOK DI BAGIAN BAWAH
+   ========================================================= */
+.comment-form-box {
+  background: var(--white);
+  border: 2.5px solid var(--forest-dark);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px 5px 0px var(--forest-dark);
+  margin-bottom: 24px;
+}
+
+.comment-form-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.comment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.comment-form-row .comment-field {
+  margin-bottom: 0;
+}
+
+.comment-field label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--forest-dark);
+}
+
+.comment-field input,
+.comment-field select,
+.comment-field textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--cream-bg);
+  border: 2px solid var(--forest-dark);
+  border-radius: 12px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comment-field input:focus,
+.comment-field select:focus,
+.comment-field textarea:focus {
+  border-color: var(--forest);
+  box-shadow: 3px 3px 0px var(--leaf);
+  background: var(--white);
+}
+
+.comment-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.comment-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.comment-count-badge {
+  display: inline-block;
+  background: var(--peach);
+  color: var(--forest-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--forest-dark);
+}
+
+.btn-submit-comment {
+  background: var(--forest);
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--forest-dark);
+  box-shadow: 3px 4px 0px var(--forest-dark);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-submit-comment:hover {
+  background: var(--leaf);
+  color: var(--forest-dark);
+  transform: translate(-2px, -2px);
+}
+
+.comment-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 460px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.comment-item-card {
+  display: flex;
+  gap: 14px;
+  background: var(--white);
+  border: 2px solid var(--forest-dark);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 4px 4px 0px var(--forest-dark);
+  align-items: flex-start;
+}
+
+.comment-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--leaf);
+  color: var(--forest-dark);
+  border: 2px solid var(--forest-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  box-shadow: 2px 2px 0px var(--forest-dark);
+}
+
+.comment-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.comment-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.comment-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.comment-author-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--forest-dark);
+}
+
+.comment-role-pill {
+  background: var(--cream);
+  color: var(--forest-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--forest-dark);
+}
+
+.comment-time {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.comment-message {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.55;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-like-comment {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--cream-bg);
+  color: var(--forest-dark);
+  border: 1.5px solid var(--forest-dark);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-like-comment:hover,
+.btn-like-comment.liked {
+  background: var(--leaf);
+  transform: scale(1.05);
+}
+
 /* MODAL VIDEO & DOCK */
 .modal-overlay {
   position: fixed;
@@ -1490,7 +1710,8 @@ article[id] {
   .showcase-grid-3,
   .cert-grid,
   .software-grid,
-  .grid-2-col {
+  .grid-2-col,
+  .comment-form-row {
     grid-template-columns: 1fr;
   }
   .review-portrait-layout {
@@ -1615,6 +1836,27 @@ article[id] {
     width: 100%;
     aspect-ratio: 9 / 16;
     min-height: 460px;
+  }
+
+  /* Komentar di HP */
+  .comment-form-box {
+    padding: 14px;
+  }
+
+  .btn-submit-comment {
+    width: 100%;
+    text-align: center;
+  }
+
+  .comment-item-card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .comment-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.82rem;
   }
 
   /* =========================================================

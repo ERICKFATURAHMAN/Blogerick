@@ -598,6 +598,42 @@
           </div>
         </article>
 
+        <!-- BAGIAN AKHIR: RUANG KOMENTAR & GUESTBOOK (CUKUP NAMA & ISI KOMEN) -->
+        <article id="comments" class="bento-card card-cream">
+          <div class="bento-row">
+            <div class="bento-label">
+              <h2>Ruang<br>Komentar</h2>
+              <span class="section-badge-leaf">Guestbook • Diskusi</span>
+            </div>
+            <div class="bento-content">
+              <p class="narrative-text text-dark">
+                Terima kasih sudah mampir dan menjelajahi blog portofolio kreatif saya! Silakan tinggalkan jejak komentar, masukan, atau sapaan hangat di bawah ini.
+              </p>
+
+              <form id="commentForm" class="comment-form-box" onsubmit="handleCommentSubmit(event)">
+                <div class="comment-field">
+                  <label for="commentName">Nama Kamu</label>
+                  <input type="text" id="commentName" placeholder="Tulis nama kamu..." required maxlength="40">
+                </div>
+
+                <div class="comment-field">
+                  <label for="commentText">Isi Komentar</label>
+                  <textarea id="commentText" rows="3" placeholder="Tulis tanggapan atau pesan di sini..." required maxlength="400"></textarea>
+                </div>
+
+                <div class="comment-form-footer">
+                  <span class="comment-count-badge" id="commentCountBadge">Memuat komentar...</span>
+                  <button type="submit" class="btn-submit-comment">
+                    <span>Kirim Komentar</span>
+                  </button>
+                </div>
+              </form>
+
+              <div class="comment-list-container" id="commentListContainer"></div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </main>
